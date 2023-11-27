@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS class, person, report, action, item cascade;
