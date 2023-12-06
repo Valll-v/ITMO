@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota/"
+     xml:base="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dota="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#good_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#good_with">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#good_with"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#good_with"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#must_have_for_hero -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#must_have_for_hero">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#agile -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#agile">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#core_game_role_item -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#core_game_role_item">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#damage_type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#damage_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Mage</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Phys</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#easy_to_kill -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#easy_to_kill">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#item_type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#item_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Mage</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Phys</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Shield</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#play_style -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#play_style">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Core</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Support</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#support_item -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#support_item">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#anti_mage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#anti_mage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:agile rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:agile>
+        <dota:damage_type>Phys</dota:damage_type>
+        <dota:play_style>Core</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#bane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#bane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:easy_to_kill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:easy_to_kill>
+        <dota:play_style>Support</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#cristal_maiden -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#cristal_maiden">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:easy_to_kill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:easy_to_kill>
+        <dota:play_style>Support</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#dagon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#dagon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:core_game_role_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:core_game_role_item>
+        <dota:item_type>Mage</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#demon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#demon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:easy_to_kill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:easy_to_kill>
+        <dota:play_style>Support</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#ethereal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#ethereal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:good_with rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#dagon"/>
+        <dota:core_game_role_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:core_game_role_item>
+        <dota:item_type>Mage</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#eye_of_skadi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#eye_of_skadi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:core_game_role_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:core_game_role_item>
+        <dota:item_type>Phys</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#guardian -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#guardian">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:item_type>Shield</dota:item_type>
+        <dota:support_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:support_item>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#heart -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#heart">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:core_game_role_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:core_game_role_item>
+        <dota:item_type>Shield</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#kaya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#kaya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:item_type>Mage</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#orchide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#orchide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:good_with rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#silver_edge"/>
+        <dota:item_type>Phys</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#pipe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#pipe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:good_with rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#guardian"/>
+        <dota:item_type>Shield</dota:item_type>
+        <dota:support_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:support_item>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#pudge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#pudge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:damage_type>Mage</dota:damage_type>
+        <dota:play_style>Support</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#queen_of_pain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#queen_of_pain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#dagon"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#ethereal"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#orchide"/>
+        <dota:agile rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:agile>
+        <dota:damage_type>Mage</dota:damage_type>
+        <dota:play_style>Core</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#shaman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#shaman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:easy_to_kill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:easy_to_kill>
+        <dota:play_style>Support</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#silver_edge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#silver_edge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Item"/>
+        <dota:core_game_role_item rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:core_game_role_item>
+        <dota:item_type>Phys</dota:item_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#slark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#slark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#eye_of_skadi"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#orchide"/>
+        <dota:damage_type>Phys</dota:damage_type>
+        <dota:play_style>Core</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#sven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#sven">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#silver_edge"/>
+        <dota:damage_type>Phys</dota:damage_type>
+        <dota:play_style>Core</dota:play_style>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#zeus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#zeus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#Hero"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#dagon"/>
+        <dota:must_have_for_hero rdf:resource="http://www.semanticweb.org/valeriy-stepanenko/ontologies/2023/11/dota#ethereal"/>
+        <dota:easy_to_kill rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dota:easy_to_kill>
+        <dota:play_style>Core</dota:play_style>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
