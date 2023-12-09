@@ -9,7 +9,7 @@ support(demon).
 
 core(queen_of_pain).
 core(zeus).
-core(anti-mage).
+core(anti_mage).
 core(slark).
 core(sven).
 
@@ -21,7 +21,7 @@ magic_damage(zeus).
 
 physical_damage(slark).
 physical_damage(sven).
-physical_damage(anti-mage).
+physical_damage(anti_mage).
 
 
 % possibility to kill
@@ -33,7 +33,7 @@ easy_to_kill(bane).
 
 
 % agile heroes
-agile(anti-mage).
+agile(anti_mage).
 agile(queen_of_pain).
 
 
