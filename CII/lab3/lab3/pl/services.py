@@ -2,6 +2,15 @@
 import re
 
 
+def serialize_answers(answers):
+    result = set()
+    for answer in answers:
+        answer = tuple(sorted(answer.values()))
+        if answer not in result and '_' not in answer:
+            result.add(answer)
+    return result
+
+
 def my_hero_choise(info):
     if info[0]:
         print('У вас уже выбран герой.')
@@ -19,11 +28,30 @@ def my_hero_choise(info):
 
 
 def my_team_hero_choise(info):
-    print(info)
+    if not info[0]:
+        print('Сначала выберите героя.')
+        return None
+    elif len(info[1]) >= 3:
+        print('Ваша команда полная.')
+        return None
+    match len(info[1]):
+        case 0:
+            return f'perfect_team({info[0][0]},Y,Z)'
+        case 1:
+            return f'perfect_team({info[0][0]},Y,{info[1][0]})'
 
 
 def my_item_choice(info):
-    print(info)
+    if not info[0]:
+        print('Сначала выберите героя.')
+        return None
+    elif len(info[2]) >= 6:
+        print('Ваш инвентарь полон.')
+        return None
+    main = f'good_for_hero({info[0][-1]},Y)'
+    for item in info[2]:
+        main = main + f',not(Y = {item})'
+    return main
 
 
 examples = [

@@ -1,7 +1,7 @@
 # coding: utf-8
 from swiplserver import PrologMQI
 from pl.services import (update_info, init_patterns,
-                         form_query, questions, examples)
+                         form_query, questions, examples, serialize_answers)
 
 
 class PrologWorker:
@@ -41,11 +41,21 @@ class PrologWorker:
                                .format('\n'.join(examples)))
                 self.info = update_info(string, self.info)
             else:
-                string = input(
-                    'Введите ваш запрос. Примеры:\n{}\n'.format(
-                        '\n'.join(questions.keys())
+                try:
+                    string = input(
+                        'Введите ваш запрос. Примеры:\n{}\n'.format(
+                            '\n'.join(questions.keys())
+                        )
                     )
-                )
-                query = form_query(string, self.info)
-                for answer in self.execute(query):
-
+                    query = form_query(string, self.info)
+                    if not query:
+                        continue
+                    answers = self.execute(query)
+                except Exception as e:
+                    print(f'Неизвестная ошибка: {e}')
+                    continue
+                if not answers:
+                    continue
+                print('Получилось! Результаты: ')
+                for answer in serialize_answers(answers):
+                    print(', '.join(answer))
