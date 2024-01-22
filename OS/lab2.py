@@ -4,7 +4,7 @@ PAGES = [9, 24, 19, 3, 21, 1, 11, 15, 11, 4, 5, 7, 20, 4,
          20, 5, 19, 10, 3, 17, 9, 16, 24, 7, 2, 13, 23, 4,
          3, 15, 24, 22, 19, 3, 4, 13, 18, 5, 7, 11, 23, 22, 6]
 
-MEMORY_SIZE = 10
+MEMORY_SIZE = 19
 
 
 class PageWorker:
@@ -59,7 +59,7 @@ class OptimalPageWorker(PageWorker):
         return popped
 
     def run(self) -> None:
-        page_faults = 0
+        page_swipes = 0
         print(f'Execution Optimal')
         print(f'Count of frames: {self.size}')
         print()
@@ -68,10 +68,10 @@ class OptimalPageWorker(PageWorker):
             popped = self._put(page, i)
             if popped is not None:
                 print(f'Removed page: {popped}')
-                page_faults += 1
+                page_swipes += 1
             self._print_queue()
             print()
-        print(f'Page swaps: {page_faults}')
+        print(f'Page swaps: {page_swipes}')
         print(f'Finish Optimal with count of frames: {self.size}')
 
 
@@ -87,7 +87,7 @@ class FIFOPageWorker(PageWorker):
         return popped
 
     def run(self) -> None:
-        page_faults = 0
+        page_swipes = 0
         print(f'Execution FIFO')
         print(f'Count of frames: {self.size}')
         print()
@@ -96,10 +96,10 @@ class FIFOPageWorker(PageWorker):
             popped = self._put(page)
             if popped is not None:
                 print(f'Removed page: {popped}')
-                page_faults += 1
+                page_swipes += 1
             self._print_queue()
             print()
-        print(f'Page swaps: {page_faults}')
+        print(f'Page swaps: {page_swipes}')
         print(f'Finish FIFO with count of frames: {self.size}')
 
 
@@ -121,7 +121,7 @@ class LRUPageWorker(PageWorker):
         return popped
 
     def run(self) -> None:
-        page_faults = 0
+        page_swipes = 0
         print(f'Execution LRU')
         print(f'Count of frames: {self.size}')
         print()
@@ -130,10 +130,10 @@ class LRUPageWorker(PageWorker):
             popped = self._put(page)
             if popped is not None:
                 print(f'Removed page: {popped}')
-                page_faults += 1
+                page_swipes += 1
             self._print_queue()
             print()
-        print(f'Page swaps: {page_faults}')
+        print(f'Page swaps: {page_swipes}')
         print(f'Finish LRU with count of frames: {self.size}')
 
 
@@ -141,9 +141,9 @@ def main():
     size = MEMORY_SIZE
     FIFOPageWorker(size).run()
     print('\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n')
-    OptimalPageWorker(size).run()
-    print('\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n')
     LRUPageWorker(size).run()
+    print('\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n')
+    OptimalPageWorker(size).run()
 
 
 if __name__ == '__main__':
