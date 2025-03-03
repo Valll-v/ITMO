@@ -2,11 +2,11 @@ import random
 
 
 MATRIX = [
-    [0, 4, 5, 3, 8],
-    [4, 0, 7, 6, 8],
-    [5, 7, 0, 7, 9],
-    [3, 6, 7, 0, 9],
-    [8, 8, 9, 9, 0],
+    [0, 1, 1, 5,  3],
+    [1, 0, 3, 1,  5],
+    [1, 3, 0, 11, 1],
+    [5, 1, 11, 0, 1],
+    [3, 5, 1, 1,  0],
 ]
 
 
@@ -34,7 +34,7 @@ def target_func(pop):
     return res
 
 
-def mutate(pops, e=0.2):
+def mutate(pops, e=0.01):
     for pop in pops:
         if random.random() <= e:
             print('Mutate!')
@@ -74,6 +74,7 @@ def main():
         print(pops)
     print('Best pop:')
     print([i + 1 for i in pops[0]])
+    print('Best distance: ', target_func(pops[0]))
 
 
 
